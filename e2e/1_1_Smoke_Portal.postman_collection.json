@@ -7747,7 +7747,7 @@
                                     ],
                                     "path": [
                                         "api",
-                                        "v3",
+                                        "v4",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -8643,7 +8643,7 @@
                                     ],
                                     "path": [
                                         "api",
-                                        "v3",
+                                        "v4",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -8718,7 +8718,7 @@
                                     ],
                                     "path": [
                                         "api",
-                                        "v3",
+                                        "v4",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
