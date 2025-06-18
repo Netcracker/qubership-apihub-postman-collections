@@ -198,7 +198,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -206,16 +205,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_2\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -230,7 +232,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"QS-STATIC-TEST-1\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-1\",\r\n    \"Alias\" :\"QS-STATIC-TEST-1\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -238,14 +240,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -1416,7 +1418,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -1424,16 +1425,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_2\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1448,7 +1452,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"QS-STATIC-TEST-1\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-1\",\r\n    \"Alias\" :\"QS-STATIC-TEST-1\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1456,14 +1460,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -1475,7 +1479,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 200 or 201\", function () {\r",
 											"    pm.expect(pm.response.code).to.be.oneOf([201, 400]);\r",
@@ -1488,16 +1491,19 @@
 											"} else {\r",
 											"    pm.environment.set(\"static_root_group_3\", \"WKSP-2\");\r",
 											"}"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1512,7 +1518,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"WKSP-2\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"WKSP-2\",\r\n    \"Alias\" :\"WKSP-2\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1520,14 +1526,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -6181,7 +6187,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -6189,16 +6194,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_2\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -6213,7 +6221,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-2\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6221,14 +6229,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -7168,7 +7176,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -7176,16 +7183,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_1\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -7200,7 +7210,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-2\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7208,14 +7218,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -8637,7 +8647,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -8645,16 +8654,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_1\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -8669,7 +8681,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-2\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8677,14 +8689,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -13418,7 +13430,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -13426,16 +13437,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_1\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -13450,7 +13464,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-2\",\r\n    \"Alias\" :\"QS-STATIC-TEST-2\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -13458,14 +13472,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -15539,7 +15553,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -15547,16 +15560,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_1\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -15571,7 +15587,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace D\",\r\n    \"Alias\" :\"QS-STATIC-TEST-D\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-D\",\r\n    \"Alias\" :\"QS-STATIC-TEST-D\",\r\n    \"name\": \"Test Workspace D\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -15579,14 +15595,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
@@ -16518,7 +16534,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
@@ -16526,16 +16541,19 @@
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"static_root_group_1\", data.groupId)"
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -16550,7 +16568,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Test Workspace\",\r\n    \"Alias\" :\"QS-STATIC-TEST-3\",\r\n    \"parentId\": \"\",\r\n    \"description\": \"Required for to upload hardcoded packages\",\r\n    \"imageUrl\": \"\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-STATIC-TEST-3\",\r\n    \"Alias\" :\"QS-STATIC-TEST-3\",\r\n    \"name\": \"Test Workspace\",\r\n    \"parentId\": null,\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -16558,14 +16576,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{SERVER_HOST}}/api/v1/groups",
+									"raw": "{{SERVER_HOST}}/api/v2/packages",
 									"host": [
 										"{{SERVER_HOST}}"
 									],
 									"path": [
 										"api",
-										"v1",
-										"groups"
+										"v2",
+										"packages"
 									]
 								}
 							},
