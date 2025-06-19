@@ -32184,7 +32184,7 @@
                                 ],
                                 "body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"QS-AC-TEST-3\",\r\n    \"Alias\" :\"QS-AC-TEST-3\",\r\n    \"name\": \"AT_BE_AC_1\",\r\n    \"parentId\": \"{{pr_workspace}}\",\r\n    \"kind\":\"workspace\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
+									"raw": "{\r\n    \"id\": \"QS-AC-TEST-3\",\r\n    \"Alias\" :\"QS-AC-TEST-3\",\r\n    \"name\": \"AT_BE_AC_1\",\r\n    \"parentId\": \"{{pr_workspace}}\",\r\n    \"kind\":\"group\",\r\n    \"description\": \"Required for to upload hardcoded packages\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
