@@ -204,7 +204,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_2\", data.groupId)"
+											"pm.environment.set(\"static_root_group_2\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -1424,7 +1424,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_2\", data.groupId)"
+											"pm.environment.set(\"static_root_group_2\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -1487,7 +1487,7 @@
 											"var data = JSON.parse(responseBody);\r",
 											"\r",
 											"if (pm.response.code === 201) {\r",
-											"    pm.environment.set(\"static_root_group_3\", data.groupId);\r",
+											"    pm.environment.set(\"static_root_group_3\", data.packageId);\r",
 											"} else {\r",
 											"    pm.environment.set(\"static_root_group_3\", \"WKSP-2\");\r",
 											"}"
@@ -6193,7 +6193,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_2\", data.groupId)"
+											"pm.environment.set(\"static_root_group_2\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -7182,7 +7182,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_1\", data.groupId)"
+											"pm.environment.set(\"static_root_group_1\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8653,7 +8653,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_1\", data.groupId)"
+											"pm.environment.set(\"static_root_group_1\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -13436,7 +13436,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_1\", data.groupId)"
+											"pm.environment.set(\"static_root_group_1\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -15559,7 +15559,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_1\", data.groupId)"
+											"pm.environment.set(\"static_root_group_1\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -16540,7 +16540,7 @@
 											"});\r",
 											"\r",
 											"var data = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"static_root_group_1\", data.groupId)"
+											"pm.environment.set(\"static_root_group_1\", data.packageId)"
 										],
 										"type": "text/javascript",
 										"packages": {}

@@ -10774,7 +10774,7 @@
                                             "});\r",
                                             "\r",
                                             "var data = JSON.parse(responseBody);\r",
-                                            "pm.environment.set(\"static_root_group_1\", data.groupId)"
+                                            "pm.environment.set(\"static_root_group_1\", data.packageId)"
                                         ]
                                     }
                                 },
@@ -13468,7 +13468,7 @@
                                             "});\r",
                                             "\r",
                                             "var data = JSON.parse(responseBody);\r",
-                                            "pm.environment.set(\"static_root_group_1\", data.groupId)"
+                                            "pm.environment.set(\"static_root_group_1\", data.packageId)"
                                         ]
                                     }
                                 },

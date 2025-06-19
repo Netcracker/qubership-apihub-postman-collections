@@ -864,7 +864,7 @@
                                             "});\r",
                                             "\r",
                                             "var data = JSON.parse(responseBody);\r",
-                                            "pm.environment.set(\"static_root_group_1\", data.groupId)"
+                                            "pm.environment.set(\"static_root_group_1\", data.packageId)"
                                         ]
                                     }
                                 },
@@ -32145,7 +32145,7 @@
                                             "if(pm.response.code === 400){\r",
                                             "        pm.environment.set(\"static_root_group_1\", pm.variables.replaceIn('{{user_5_id}}') + \".\" + data.params.alias);\r",
                                             "} else {\r",
-                                            "        pm.environment.set(\"static_root_group_1\", data.groupId);\r",
+                                            "        pm.environment.set(\"static_root_group_1\", data.packageId);\r",
                                             "        postman.setNextRequest(\"7.1.4 Create package\");\r",
                                             "}});\r",
                                             ""
