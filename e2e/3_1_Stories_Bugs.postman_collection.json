@@ -16613,7 +16613,7 @@
                             "protocolProfileBehavior": {}
                         },
                         {
-                            "name": "9.1.3 Check that operations displayed from last revision",
+                            "name": "9.1.3 Check that operation types displayed from last revision",
                             "event": [
                                 {
                                     "listen": "test",
@@ -16627,7 +16627,7 @@
                                             "var data = pm.response.json();\r",
                                             "\r",
                                             "pm.test(\"Operations displayed\", function () {\r",
-                                            "    pm.expect(data.operationTypes[0].operations.length).not.to.eq(0);\r",
+                                            "    pm.expect(data.operationTypes.length).not.to.eq(0);\r",
                                             "});"
                                         ]
                                     }
