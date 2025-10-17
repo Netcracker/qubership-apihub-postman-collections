@@ -12863,7 +12863,7 @@
 										},
 										{
 											"key": "operations",
-											"value": "[{\\\"operationId\\\":\\\"{{operation_id_1}}\\\"}]",
+											"value": "[{\"operationId\":\"{{operation_id_1}}\"}]",
 											"type": "text"
 										}
 									]
