@@ -5809,14 +5809,20 @@
                                     }
                                 ],
                                 "body": {
-                                    "mode": "raw",
-                                    "raw": "{\r\n    \"groupName\": \"test_1\",\r\n    \"description\": \"Test group\"\r\n}",
-                                    "options": {
-                                        "raw": {
-                                            "language": "json"
-                                        }
-                                    }
-                                }
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "groupName",
+											"value": "test_1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Test group",
+											"type": "text"
+										}
+									]
+								}
                             },
                             "response": [],
                             "protocolProfileBehavior": {}
@@ -12839,7 +12845,7 @@
                                         "{{operation_group_1}}"
                                     ]
                                 },
-                                "method": "PUT",
+                                "method": "PATCH",
                                 "header": [
                                     {
                                         "key": "api-key",
@@ -12848,14 +12854,20 @@
                                     }
                                 ],
                                 "body": {
-                                    "mode": "raw",
-                                    "raw": "{\r\n    \"groupName\": \"test_group_1\",\r\n    \"operations\": [{\r\n        \"operationId\": \"{{operation_id_1}}\"\r\n    }]\r\n}",
-                                    "options": {
-                                        "raw": {
-                                            "language": "json"
-                                        }
-                                    }
-                                }
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "groupName",
+											"value": "test_group_1",
+											"type": "text"
+										},
+										{
+											"key": "operations",
+											"value": "[{\\\"operationId\\\":\\\"{{operation_id_1}}\\\"}]",
+											"type": "text"
+										}
+									]
+								}
                             },
                             "response": [],
                             "protocolProfileBehavior": {}
@@ -18442,7 +18454,7 @@
                             "protocolProfileBehavior": {}
                         },
                         {
-                            "name": "9.1.3 Check that operations displayed from last revision",
+                            "name": "9.1.3 Check that operation types displayed from last revision",
                             "event": [
                                 {
                                     "listen": "test",
@@ -18456,7 +18468,7 @@
                                             "var data = pm.response.json();\r",
                                             "\r",
                                             "pm.test(\"Operations displayed\", function () {\r",
-                                            "    pm.expect(data.operationTypes[0].operations.length).not.to.eq(0);\r",
+                                            "    pm.expect(data.operationTypes.length).not.to.eq(0);\r",
                                             "});"
                                         ]
                                     }
