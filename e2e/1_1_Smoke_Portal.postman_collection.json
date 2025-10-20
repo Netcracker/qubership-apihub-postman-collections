@@ -6941,13 +6941,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_2_2}}@1",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_2_2}}@1",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
