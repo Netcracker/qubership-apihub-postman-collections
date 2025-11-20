@@ -1,7 +1,7 @@
 {
     "info": {
         "name": "1_1_Smoke_Portal",
-        "_postman_id": "fc9a33a8-edb3-4c90-90f5-8b553003e86d",
+        "_postman_id": "c6e44b13-f2a3-4df8-b528-3d4fe0d45f3d",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
@@ -2982,10 +2982,12 @@
                                             "\r",
                                             "var data = JSON.parse(responseBody);\r",
                                             "\r",
-                                            "pm.test(\"All events made by specified user\", function() {\r",
-                                            "    for (var i = 0; i < data.events.length; i++) {\r",
-                                            "        pm.expect(data.events[i].principal.Id).to.be.oneOf(['x_apihub', 'x_APIHUB']);\r",
-                                            "    }\r",
+                                            "pm.test(\"All events made by specified user\", function () {\r",
+                                            "    data.events.forEach((event, index) => {\r",
+                                            "        pm.expect(event).to.have.property(\"principal\");\r",
+                                            "        const id = event.principal.id;\r",
+                                            "        pm.expect([\"x_apihub\", \"x_APIHUB\"]).to.include(id, `Неправильний id у event №${index + 1}`);\r",
+                                            "    });\r",
                                             "});\r",
                                             ""
                                         ]
@@ -6939,13 +6941,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_2_2}}@1",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_2_2}}@1",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -7553,13 +7555,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_1}}?includeOperations=test",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_1}}?includeOperations=test",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -7610,13 +7612,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_1}}?includeSummary=test",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_1}}?includeSummary=test",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -7886,13 +7888,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions?status=release",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions?status=release",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -7948,13 +7950,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_1}}?includeOperations=true",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_1}}?includeOperations=true",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -8011,13 +8013,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_1}}?includeSummary=true",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_1}}?includeSummary=true",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -8074,13 +8076,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions?versionLabel=API_Smoke",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions?versionLabel=API_Smoke",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -8136,13 +8138,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions?textFilter=0001.2",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions?textFilter=0001.2",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -8198,13 +8200,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions?versionLabel=API_Smoke",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions?versionLabel=API_Smoke",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -9538,13 +9540,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_1}}",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_1}}",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -9595,13 +9597,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_2}}",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_2}}",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -13143,13 +13145,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions/{{version_1}}?includeOperations=test",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions/{{version_1}}?includeOperations=test",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions",
@@ -13200,13 +13202,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions/{{version_1}}?includeSummary=test",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions/{{version_1}}?includeSummary=test",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions",
@@ -13310,13 +13312,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions/{{version_2}}",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions/{{version_2}}",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions",
@@ -13775,13 +13777,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -14122,13 +14124,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_2}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_2}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_2}}",
                                         "versions"
@@ -14551,13 +14553,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -14608,13 +14610,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions/{{version_1}}",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions/{{version_1}}",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions",
@@ -15187,13 +15189,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -15243,13 +15245,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions/{{version_1}}",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions/{{version_1}}",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions",
@@ -15733,13 +15735,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -15858,13 +15860,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions/{{version_3}}?includeSummary=true",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions/{{version_3}}?includeSummary=true",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions",
