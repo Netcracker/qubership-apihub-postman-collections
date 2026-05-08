@@ -875,8 +875,7 @@
                                             "});\r",
                                             "\r",
                                             "var data = JSON.parse(responseBody);\r",
-                                            "pm.environment.set(\"publish_id\", data.publishId)\r",
-                                            "setTimeout(function(){}, 20000)"
+                                            "pm.environment.set(\"publish_id\", data.publishId)"
                                         ]
                                     }
                                 },
@@ -944,10 +943,67 @@
                                         "type": "text/javascript",
                                         "exec": [
                                             "var data = JSON.parse(responseBody);\r",
-                                            "pm.test(\"Status is running\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
-                                            "    pm.expect(data.status).to.eql(\"complete\");\r",
-                                            "});\r",
+                                            "var retryableStatuses = [\"none\",\"running\"];\r",
+                                            "var attemptKey = \"pkgBuildStatusRetryAttempt\";\r",
+                                            "var attempt = parseInt(pm.environment.get(attemptKey) || \"0\", 10);\r",
+                                            "var maxRetries = parseInt(pm.environment.get(\"pkgBuildStatusMaxRetries\") || \"15\", 10);\r",
+                                            "var retryDelayMs = parseInt(pm.environment.get(\"pkgBuildStatusRetryDelayMs\") || \"3000\", 10);\r",
+                                            "var requestUrl = \"{{SERVER_HOST}}/api/v2/packages/{{package_1}}/publish/{{publish_id}}/status\";\r",
+                                            "var apiKey = pm.variables.get(\"at-api-key\");\r",
+                                            "var currentStatus = data && data.status;\r",
+                                            "var currentCode = (pm.response && (pm.response.code || pm.response.status)) || 200;\r",
+                                            "function sleep(ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); }\r",
+                                            "function parseStatus(res) {\r",
+                                            "    try { return res && typeof res.json === \"function\" ? res.json() : null; } catch (e) {}\r",
+                                            "    try { return res && typeof res.text === \"function\" ? JSON.parse(res.text()) : null; } catch (e2) {}\r",
+                                            "    return null;\r",
+                                            "}\r",
+                                            "function getResponseCode(res) { return (res && (res.code || res.status)) || 0; }\r",
+                                            "function sendStatusRequest() {\r",
+                                            "    return new Promise(function (resolve, reject) {\r",
+                                            "        pm.sendRequest({\r",
+                                            "            url: requestUrl,\r",
+                                            "            method: \"GET\",\r",
+                                            "            header: [{ key: \"api-key\", value: apiKey }]\r",
+                                            "        }, function (err, res) {\r",
+                                            "            if (err) { return reject(err); }\r",
+                                            "            resolve(res);\r",
+                                            "        });\r",
+                                            "    });\r",
+                                            "}\r",
+                                            "async function poll() {\r",
+                                            "    while (true) {\r",
+                                            "        if (currentStatus === \"complete\" || currentStatus === \"error\") {\r",
+                                            "            pm.test(\"Package build status is complete\", function () {\r",
+                                            "                pm.expect(currentCode).to.eql(200);\r",
+                                            "                pm.expect(currentStatus).to.eql(\"complete\");\r",
+                                            "            });\r",
+                                            "            return;\r",
+                                            "        }\r",
+                                            "        var isRetryable = retryableStatuses.indexOf(currentStatus) !== -1;\r",
+                                            "        if (!isRetryable || attempt >= maxRetries) {\r",
+                                            "            pm.test(\"Package build status eventually completes\", function () {\r",
+                                            "                pm.expect(currentCode).to.eql(200);\r",
+                                            "                pm.expect(currentStatus, \"Final status\").to.eql(\"complete\");\r",
+                                            "            });\r",
+                                            "            return;\r",
+                                            "        }\r",
+                                            "        attempt += 1;\r",
+                                            "        pm.environment.set(attemptKey, String(attempt));\r",
+                                            "        await sleep(retryDelayMs);\r",
+                                            "        var res;\r",
+                                            "        try { res = await sendStatusRequest(); } catch (pollErr) {\r",
+                                            "            pm.test(\"Package build status polling request failed\", function () {\r",
+                                            "                throw pollErr;\r",
+                                            "            });\r",
+                                            "            return;\r",
+                                            "        }\r",
+                                            "        currentCode = getResponseCode(res);\r",
+                                            "        var nextData = parseStatus(res);\r",
+                                            "        currentStatus = nextData && nextData.status;\r",
+                                            "    }\r",
+                                            "}\r",
+                                            "poll();\r",
                                             ""
                                         ]
                                     }
@@ -957,7 +1013,7 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            ""
+                                            "pm.environment.set(\"pkgBuildStatusRetryAttempt\", \"0\");\r"
                                         ]
                                     }
                                 }
