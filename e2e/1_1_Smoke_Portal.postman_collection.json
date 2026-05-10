@@ -948,7 +948,7 @@
                                             "var attempt = parseInt(pm.environment.get(attemptKey) || \"0\", 10);\r",
                                             "var maxRetries = parseInt(pm.environment.get(\"pkgBuildStatusMaxRetries\") || \"15\", 10);\r",
                                             "var retryDelayMs = parseInt(pm.environment.get(\"pkgBuildStatusRetryDelayMs\") || \"3000\", 10);\r",
-                                            "var requestUrl = \"{{SERVER_HOST}}/api/v2/packages/{{package_1}}/publish/{{publish_id}}/status\";\r",
+                                            "var requestUrl = pm.variables.get(\"SERVER_HOST\")+\"/api/v2/packages/\"+pm.variables.get(\"package_1\")+\"/publish/\"+pm.variables.get(\"publish_id\")+\"/status\";\r",
                                             "var apiKey = pm.variables.get(\"at-api-key\");\r",
                                             "var currentStatus = data && data.status;\r",
                                             "var currentCode = (pm.response && (pm.response.code || pm.response.status)) || 200;\r",
