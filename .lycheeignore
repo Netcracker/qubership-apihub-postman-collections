@@ -1,1 +1,6 @@
 ^.*example.com
+
+# APM-deployed agent harness (upstream package markdown)
+^\.cursor/
+^\.claude/
+^\.agents/

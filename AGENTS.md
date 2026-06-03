@@ -20,7 +20,6 @@ When the **qubership-apihub-backend** REST API changes (new endpoints, paths, pa
 ## Clarification before editing
 
 - Do **not** change collections until requirements are clear (endpoint, expected status, response shape, auth).
-- For GitHub ticket work, use the project skill `github-ticket-implementation-planner` before implementation.
 - State assumptions explicitly when the OpenAPI spec or ticket is ambiguous.
 
 ## Repository layout (quick reference)
