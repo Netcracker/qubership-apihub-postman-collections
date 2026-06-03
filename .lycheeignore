@@ -4,3 +4,6 @@
 ^\.cursor/
 ^\.claude/
 ^\.agents/
+^\.github/instructions/
+^\.github/skills/
+^\.github/prompts/
