@@ -571,7 +571,7 @@
                                 "header": [],
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\r\n    \"email\": \"user1@openmail.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_1\"\r\n}",
+                                    "raw": "{\r\n    \"email\": \"user1@example.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_1\"\r\n}",
                                     "options": {
                                         "raw": {
                                             "language": "json"
@@ -638,7 +638,7 @@
                                 "header": [],
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\r\n    \"email\": \"user2@openmail.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_2\"\r\n}",
+                                    "raw": "{\r\n    \"email\": \"user2@example.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_2\"\r\n}",
                                     "options": {
                                         "raw": {
                                             "language": "json"
@@ -705,7 +705,7 @@
                                 "header": [],
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\r\n    \"email\": \"user4@openmail.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_4\"\r\n}",
+                                    "raw": "{\r\n    \"email\": \"user4@example.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_4\"\r\n}",
                                     "options": {
                                         "raw": {
                                             "language": "json"
@@ -772,7 +772,7 @@
                                 "header": [],
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\r\n    \"email\": \"user5@openmail.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_5\"\r\n}",
+                                    "raw": "{\r\n    \"email\": \"user5@example.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"AC_user_5\"\r\n}",
                                     "options": {
                                         "raw": {
                                             "language": "json"
@@ -2138,13 +2138,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -2958,13 +2958,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -5061,13 +5061,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -5212,8 +5212,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -5424,8 +5424,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -6034,13 +6034,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -6185,8 +6185,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -6397,8 +6397,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -7007,13 +7007,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -7158,8 +7158,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -7370,8 +7370,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -7980,13 +7980,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -8131,8 +8131,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -8343,8 +8343,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -8953,13 +8953,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -9104,8 +9104,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -9316,8 +9316,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -9926,13 +9926,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -10077,8 +10077,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -10289,8 +10289,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -10974,13 +10974,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -11101,13 +11101,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -11252,8 +11252,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -11464,8 +11464,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -12077,13 +12077,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -12204,13 +12204,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -12355,8 +12355,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -12567,8 +12567,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -13233,13 +13233,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -13360,13 +13360,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -13511,8 +13511,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -13723,8 +13723,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -14336,13 +14336,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -14463,13 +14463,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -14614,8 +14614,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -14826,8 +14826,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -15492,13 +15492,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -15619,13 +15619,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -15770,8 +15770,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -15982,8 +15982,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -16595,13 +16595,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -16722,13 +16722,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -16873,8 +16873,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -17085,8 +17085,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -17882,13 +17882,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -18003,13 +18003,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -18111,13 +18111,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -18262,8 +18262,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -18474,8 +18474,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -19138,13 +19138,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -19259,13 +19259,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -19367,13 +19367,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -19518,8 +19518,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -19730,8 +19730,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -20283,13 +20283,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -20404,13 +20404,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -20512,13 +20512,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -20663,8 +20663,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -20875,8 +20875,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -21488,13 +21488,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -21609,13 +21609,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -21717,13 +21717,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -21868,8 +21868,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -22080,8 +22080,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -22633,13 +22633,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -22754,13 +22754,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -22862,13 +22862,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -23013,8 +23013,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -23225,8 +23225,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -23838,13 +23838,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -23959,13 +23959,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -24067,13 +24067,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -24218,8 +24218,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -24430,8 +24430,8 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
-                                            "pm.test(\"Status code is 200\", function () {\r",
-                                            "    pm.response.to.have.status(200);\r",
+                                            "pm.test(\"Status code is 403\", function () {\r",
+                                            "    pm.response.to.have.status(403);\r",
                                             "});"
                                         ]
                                     }
@@ -25054,13 +25054,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -25175,13 +25175,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -25283,13 +25283,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -26337,13 +26337,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -26458,13 +26458,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -26566,13 +26566,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -27570,13 +27570,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -27691,13 +27691,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -27799,13 +27799,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -28802,13 +28802,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -28923,13 +28923,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -29031,13 +29031,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -30046,13 +30046,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -30167,13 +30167,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -30275,13 +30275,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -31278,13 +31278,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -31399,13 +31399,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -31507,13 +31507,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{dashboard_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{dashboard_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{dashboard_1}}",
                                         "versions"
@@ -32447,13 +32447,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{personal_package}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{personal_package}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{personal_package}}",
                                         "versions"
@@ -32625,13 +32625,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{personal_package}}/publish/{{publish_id}}/status",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{personal_package}}/publish/{{publish_id}}/status",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{personal_package}}",
                                         "publish",

@@ -956,13 +956,13 @@
                                     ],
                                     "request": {
                                         "url": {
-                                            "raw": "{{SERVER_HOST}}/api/v2/packages/QS-STATIC-TEST-2.PKG1/publish/nothing123/status",
+                                            "raw": "{{SERVER_HOST}}/api/v3/packages/QS-STATIC-TEST-2.PKG1/publish/nothing123/status",
                                             "host": [
                                                 "{{SERVER_HOST}}"
                                             ],
                                             "path": [
                                                 "api",
-                                                "v2",
+                                                "v3",
                                                 "packages",
                                                 "QS-STATIC-TEST-2.PKG1",
                                                 "publish",
@@ -1360,13 +1360,13 @@
                                     ],
                                     "request": {
                                         "url": {
-                                            "raw": "{{SERVER_HOST}}/api/v2/packages/nothing123/versions",
+                                            "raw": "{{SERVER_HOST}}/api/v3/packages/nothing123/versions",
                                             "host": [
                                                 "{{SERVER_HOST}}"
                                             ],
                                             "path": [
                                                 "api",
-                                                "v2",
+                                                "v3",
                                                 "packages",
                                                 "nothing123",
                                                 "versions"
@@ -1752,13 +1752,13 @@
                                     ],
                                     "request": {
                                         "url": {
-                                            "raw": "{{SERVER_HOST}}/api/v2/packages/nothing123/versions/nothing123",
+                                            "raw": "{{SERVER_HOST}}/api/v3/packages/nothing123/versions/nothing123",
                                             "host": [
                                                 "{{SERVER_HOST}}"
                                             ],
                                             "path": [
                                                 "api",
-                                                "v2",
+                                                "v3",
                                                 "packages",
                                                 "nothing123",
                                                 "versions",
@@ -1921,13 +1921,13 @@
                                     ],
                                     "request": {
                                         "url": {
-                                            "raw": "{{SERVER_HOST}}/api/v2/packages/nothing123/versions/nothing123/documents/nothing123",
+                                            "raw": "{{SERVER_HOST}}/api/v3/packages/nothing123/versions/nothing123/documents/nothing123",
                                             "host": [
                                                 "{{SERVER_HOST}}"
                                             ],
                                             "path": [
                                                 "api",
-                                                "v2",
+                                                "v3",
                                                 "packages",
                                                 "nothing123",
                                                 "versions",
@@ -3917,13 +3917,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/search/operations",
+                                    "raw": "{{SERVER_HOST}}/api/v3/search/operations",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "search",
                                         "operations"
                                     ]
@@ -3946,124 +3946,6 @@
                                         }
                                     }
                                 }
-                            },
-                            "response": [],
-                            "protocolProfileBehavior": {}
-                        },
-                        {
-                            "name": "0.5.4 Get list of all Agent instances without auth",
-                            "event": [
-                                {
-                                    "listen": "test",
-                                    "script": {
-                                        "type": "text/javascript",
-                                        "exec": [
-                                            "pm.test(\"Status code is 401\", function () {\r",
-                                            "    pm.response.to.have.status(401);\r",
-                                            "});"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "listen": "prerequest",
-                                    "script": {
-                                        "type": "text/javascript",
-                                        "exec": [
-                                            ""
-                                        ]
-                                    }
-                                }
-                            ],
-                            "request": {
-                                "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/agents?getAll=true",
-                                    "host": [
-                                        "{{SERVER_HOST}}"
-                                    ],
-                                    "path": [
-                                        "api",
-                                        "v2",
-                                        "agents"
-                                    ],
-                                    "query": [
-                                        {
-                                            "key": "getAll",
-                                            "value": "true"
-                                        }
-                                    ]
-                                },
-                                "method": "GET",
-                                "header": [
-                                    {
-                                        "key": "api-key",
-                                        "value": "14e39bd632b754a4d9a6eec521f2053a6804027d30e7ad8e62a4906270c17485",
-                                        "type": "default"
-                                    },
-                                    {
-                                        "key": "Authorization",
-                                        "value": "Bearer {{token}}",
-                                        "type": "default",
-                                        "disabled": true
-                                    }
-                                ]
-                            },
-                            "response": [],
-                            "protocolProfileBehavior": {}
-                        },
-                        {
-                            "name": "0.5.5 Get list of service names without auth",
-                            "event": [
-                                {
-                                    "listen": "test",
-                                    "script": {
-                                        "type": "text/javascript",
-                                        "exec": [
-                                            "pm.test(\"Status code is 401\", function () {\r",
-                                            "    pm.response.to.have.status(401);\r",
-                                            "});"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "listen": "prerequest",
-                                    "script": {
-                                        "type": "text/javascript",
-                                        "exec": [
-                                            ""
-                                        ]
-                                    }
-                                }
-                            ],
-                            "request": {
-                                "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/agents/{{agent_id_1}}/namespaces/{{namespace}}/serviceNames",
-                                    "host": [
-                                        "{{SERVER_HOST}}"
-                                    ],
-                                    "path": [
-                                        "api",
-                                        "v2",
-                                        "agents",
-                                        "{{agent_id_1}}",
-                                        "namespaces",
-                                        "{{namespace}}",
-                                        "serviceNames"
-                                    ]
-                                },
-                                "method": "GET",
-                                "header": [
-                                    {
-                                        "key": "api-key",
-                                        "value": "14e39bd632b754a4d9a6eec521f2053a6804027d30e7ad8e62a4906270c17485",
-                                        "type": "default"
-                                    },
-                                    {
-                                        "key": "Authorization",
-                                        "value": "Bearer {{token}}",
-                                        "type": "default",
-                                        "disabled": true
-                                    }
-                                ]
                             },
                             "response": [],
                             "protocolProfileBehavior": {}
@@ -4242,7 +4124,7 @@
                             "protocolProfileBehavior": {}
                         },
                         {
-                            "name": "0.5.9 Async document transformation without auth",
+                            "name": "0.5.9 Async export without auth",
                             "event": [
                                 {
                                     "listen": "test",
@@ -4267,89 +4149,17 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/test_1/versions/test_1/rest/groups/test_1/transform",
+                                    "raw": "{{SERVER_HOST}}/api/v1/export",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
-                                        "packages",
-                                        "test_1",
-                                        "versions",
-                                        "test_1",
-                                        "rest",
-                                        "groups",
-                                        "test_1",
-                                        "transform"
+                                        "v1",
+                                        "export"
                                     ]
                                 },
                                 "method": "POST",
-                                "header": [
-                                    {
-                                        "key": "Authorization",
-                                        "value": "Bearer {{token}}",
-                                        "type": "default",
-                                        "disabled": true
-                                    }
-                                ],
-                                "body": {
-                                    "mode": "raw",
-                                    "raw": "{\r\n    \"email\": \"{{$randomPhoneNumber}}@openmail.com\",\r\n    \"password\": \"password\",\r\n    \"name\": \"{{$randomPhoneNumber}}\"\r\n}",
-                                    "options": {
-                                        "raw": {
-                                            "language": "json"
-                                        }
-                                    }
-                                }
-                            },
-                            "response": [],
-                            "protocolProfileBehavior": {}
-                        },
-                        {
-                            "name": "0.5.10 Export operations group as OpenaAPI documents without auth",
-                            "event": [
-                                {
-                                    "listen": "test",
-                                    "script": {
-                                        "type": "text/javascript",
-                                        "exec": [
-                                            "pm.test(\"Status code is 401\", function () {\r",
-                                            "    pm.response.to.have.status(401);\r",
-                                            "});"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "listen": "prerequest",
-                                    "script": {
-                                        "type": "text/javascript",
-                                        "exec": [
-                                            ""
-                                        ]
-                                    }
-                                }
-                            ],
-                            "request": {
-                                "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/test_1/versions/test_1/rest/export/groups/test_1",
-                                    "host": [
-                                        "{{SERVER_HOST}}"
-                                    ],
-                                    "path": [
-                                        "api",
-                                        "v2",
-                                        "packages",
-                                        "test_1",
-                                        "versions",
-                                        "test_1",
-                                        "rest",
-                                        "export",
-                                        "groups",
-                                        "test_1"
-                                    ]
-                                },
-                                "method": "GET",
                                 "header": [
                                     {
                                         "key": "Authorization",
@@ -4712,9 +4522,9 @@
                                             "});",
                                             "",
                                             "var data = JSON.parse(responseBody);",
-                                            "pm.environment.set(\"runenvEmail\", \"runenv.surname@qubership.org\");",
+                                            "pm.environment.set(\"runenvEmail\", \"runenv.surname@example.com\");",
                                             "pm.environment.set(\"runenvPassword\", \"pa$$word\");",
-                                            "pm.environment.set(\"runenvId\",  \"runenv-surnameatqubership-org\");"
+                                            "pm.environment.set(\"runenvId\",  \"runenv-surnameatexample-com\");"
                                         ]
                                     }
                                 },
@@ -4744,7 +4554,7 @@
                                 "header": [],
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\r\n  \"email\": \"runenv.surname@qubership.org\",\r\n  \"name\": \"RUNENV RUNENV\",\r\n  \"password\": \"pa$$word\",\r\n  \"privateWorkspaceId\": \"\"\r\n}",
+                                    "raw": "{\r\n  \"email\": \"runenv.surname@example.com\",\r\n  \"name\": \"RUNENV RUNENV\",\r\n  \"password\": \"pa$$word\",\r\n  \"privateWorkspaceId\": \"\"\r\n}",
                                     "options": {
                                         "raw": {
                                             "language": "json"
@@ -6256,13 +6066,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/activity?includeRefs=new",
+                                    "raw": "{{SERVER_HOST}}/api/v4/packages/{{package_1}}/activity?includeRefs=new",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v4",
                                         "packages",
                                         "{{package_1}}",
                                         "activity"
@@ -6294,6 +6104,34 @@
                                     "script": {
                                         "type": "text/javascript",
                                         "exec": [
+                                            "if (pm.response.code === 401 && pm.environment.get(\"authRetried\") !== \"true\") {\r",
+                                            "    pm.environment.set(\"authRetried\", \"true\");\r",
+                                            "\r",
+                                            "    pm.sendRequest({\r",
+                                            "        url: pm.environment.get(\"SERVER_HOST\") + \"/api/v2/auth/local\",\r",
+                                            "        method: \"POST\",\r",
+                                            "        auth: {\r",
+                                            "            type: \"basic\",\r",
+                                            "            basic: [\r",
+                                            "                { key: \"username\", value: pm.environment.get(\"Username\") },\r",
+                                            "                { key: \"password\", value: pm.environment.get(\"Password\") }\r",
+                                            "            ]\r",
+                                            "        }\r",
+                                            "    }, (err, res) => {\r",
+                                            "        if (err || res.code !== 200) {\r",
+                                            "            console.error(\"Token refresh failed:\", err || res.code);\r",
+                                            "            pm.environment.unset(\"authRetried\");\r",
+                                            "            return;\r",
+                                            "        }\r",
+                                            "        pm.environment.set(\"token\", res.json().token);\r",
+                                            "        postman.setNextRequest(pm.info.requestName);\r",
+                                            "    });\r",
+                                            "\r",
+                                            "    return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "pm.environment.unset(\"authRetried\");\r",
+                                            "\r",
                                             "pm.test(\"Status code is 400\", function () {\r",
                                             "    pm.response.to.have.status(400);\r",
                                             "});"
@@ -6312,13 +6150,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/activity?onlyFavorite=s",
+                                    "raw": "{{SERVER_HOST}}/api/v4/activity?onlyFavorite=s",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v4",
                                         "activity"
                                     ],
                                     "query": [
@@ -6331,8 +6169,8 @@
                                 "method": "GET",
                                 "header": [
                                     {
-                                        "key": "api-key",
-                                        "value": "{{at-api-key}}",
+                                        "key": "Authorization",
+                                        "value": "Bearer {{token}}",
                                         "type": "default"
                                     }
                                 ]
@@ -7004,13 +6842,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -7657,13 +7495,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/ewr123/revisions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/ewr123/revisions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -7709,13 +7547,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/nothing123/versions",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/nothing123/versions",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "nothing123",
                                         "versions"
@@ -8514,13 +8352,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions?limit=s",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions?limit=s",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -8570,13 +8408,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions?checkRevisions=123",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions?checkRevisions=123",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions"
@@ -9753,13 +9591,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_1}}/rest/groups",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_1}}/rest/groups",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -9806,13 +9644,13 @@
                             ],
                             "request": {
                                 "url": {
-                                    "raw": "{{SERVER_HOST}}/api/v2/packages/{{package_1}}/versions/{{version_1}}/rest/groups",
+                                    "raw": "{{SERVER_HOST}}/api/v3/packages/{{package_1}}/versions/{{version_1}}/rest/groups",
                                     "host": [
                                         "{{SERVER_HOST}}"
                                     ],
                                     "path": [
                                         "api",
-                                        "v2",
+                                        "v3",
                                         "packages",
                                         "{{package_1}}",
                                         "versions",
@@ -11020,6 +10858,34 @@
                             "script": {
                                 "type": "text/javascript",
                                 "exec": [
+                                    "if (pm.response.code === 401 && pm.environment.get(\"authRetried\") !== \"true\") {\r",
+                                    "    pm.environment.set(\"authRetried\", \"true\");\r",
+                                    "\r",
+                                    "    pm.sendRequest({\r",
+                                    "        url: pm.environment.get(\"SERVER_HOST\") + \"/api/v2/auth/local\",\r",
+                                    "        method: \"POST\",\r",
+                                    "        auth: {\r",
+                                    "            type: \"basic\",\r",
+                                    "            basic: [\r",
+                                    "                { key: \"username\", value: pm.environment.get(\"Username\") },\r",
+                                    "                { key: \"password\", value: pm.environment.get(\"Password\") }\r",
+                                    "            ]\r",
+                                    "        }\r",
+                                    "    }, (err, res) => {\r",
+                                    "        if (err || res.code !== 200) {\r",
+                                    "            console.error(\"Token refresh failed:\", err || res.code);\r",
+                                    "            pm.environment.unset(\"authRetried\");\r",
+                                    "            return;\r",
+                                    "        }\r",
+                                    "        pm.environment.set(\"token\", res.json().token);\r",
+                                    "        postman.setNextRequest(pm.info.requestName);\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    return;\r",
+                                    "}\r",
+                                    "\r",
+                                    "pm.environment.unset(\"authRetried\");\r",
+                                    "\r",
                                     "pm.test(\"Status code is 400\", function () {\r",
                                     "    pm.response.to.have.status(400);\r",
                                     "});"
@@ -11052,8 +10918,8 @@
                         "method": "POST",
                         "header": [
                             {
-                                "key": "api-key",
-                                "value": "{{at-api-key}}",
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}",
                                 "type": "default"
                             }
                         ]
