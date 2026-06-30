@@ -5045,7 +5045,7 @@
                             "protocolProfileBehavior": {}
                         },
                         {
-                            "name": "4.2.16 Group depend publish",
+                            "name": "4.2.16 Group depend publish (publish workspace)",
                             "event": [
                                 {
                                     "listen": "test",
@@ -5058,9 +5058,9 @@
                                             "",
                                             "pm.test(\"Invalid package kind error\", function () {",
                                             "    const data = pm.response.json();",
-                                            "    pm.expect(data.code).to.eql(\"6802\");",
-                                            "    pm.expect(data.params.kind).to.eql(\"group\");",
-                                            "    pm.expect(data.params.allowedKind).to.eql([\"package\", \"dashboard\"]);",
+                                            "    pm.expect(data.code).to.eql(\"8400\");",
+                                            "    pm.expect(data.params.kind).to.eql(\"workspace\");",
+                                            "    pm.expect(data.params.allowedKinds).to.eql(\"package, dashboard\");",
                                             "});"
                                         ]
                                     }
